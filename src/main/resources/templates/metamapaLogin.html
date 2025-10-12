@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MetaMapa - Iniciar Sesión</title>
+
+    <link rel="stylesheet" th:href="@{/css/login.css}"/> </head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <div class="logo">
+            <a th:href="@{/static}" aria-label="MetaMapa inicio"> <img th:href="@{/img/logo.png}" alt="Logo MetaMapa">
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="login-container">
+    <form class="login-box" th:action="@{/login}" method="post">
+        <h2>Iniciar Sesión</h2>
+
+        <div th:if="${param.error}" class="login-error-message">
+            Usuario o contraseña incorrectos.
+        </div>
+        <div th:if="${param.logout}" class="login-success-message">
+            Has cerrado sesión correctamente.
+        </div>
+
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="username" placeholder="Usuario" required autofocus />
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required />
+
+        <button type="submit" class="btn-login">Iniciar Sesión</button>
+
+        <p class="register-text">
+            ¿No tienes una cuenta? <a th:href="@{/registro}">REGÍSTRATE</a>
+        </p>
+
+        <button type="button" class="btn-invitado">
+            <a th:href="@{/hechos}" style="color: white !important;text-decoration: none !important;">Entrar como INVITADO</a>
+        </button>
+    </form>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <span class="footer-left">MetaMapa 2025</span>
+        <a class="footer-center" th:href="@{/legal/privacidad}">Información legal y de privacidad</a>
+        <span class="footer-right">Español (AR)</span>
+    </div>
+</footer>
+</body>
+</html>

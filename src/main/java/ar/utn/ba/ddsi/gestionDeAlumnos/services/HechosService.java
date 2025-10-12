@@ -1,10 +1,7 @@
 package ar.utn.ba.ddsi.gestionDeAlumnos.services;
 
 
-import ar.utn.ba.ddsi.gestionDeAlumnos.dto.ContactoDTO;
 import ar.utn.ba.ddsi.gestionDeAlumnos.dto.HechoDTO;
-import ar.utn.ba.ddsi.gestionDeAlumnos.dto.TipoContacto;
-import ar.utn.ba.ddsi.gestionDeAlumnos.exceptions.DuplicateLegajoException;
 import ar.utn.ba.ddsi.gestionDeAlumnos.exceptions.NotFoundException;
 import ar.utn.ba.ddsi.gestionDeAlumnos.exceptions.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
