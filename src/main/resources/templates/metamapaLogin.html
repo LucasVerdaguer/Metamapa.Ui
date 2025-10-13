@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MetaMapa - Iniciar Sesión</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/login.css}"/> </head>
 <body>
 
 <header class="header">
     <div class="header-inner">
         <div class="logo">
-            <a th:href="@{/static}" aria-label="MetaMapa inicio"> <img th:href="@{/img/logo.png}" alt="Logo MetaMapa">
+            <a th:href="@{/static}" aria-label="MetaMapa inicio"> <img th:src="@{/img/logo.png}" alt="Logo MetaMapa">
             </a>
         </div>
     </div>
@@ -49,7 +49,7 @@
 <footer class="main-footer">
     <div class="footer-container">
         <span class="footer-left">MetaMapa 2025</span>
-        <a class="footer-center" th:href="@{/legal/privacidad}">Información legal y de privacidad</a>
+        <a class="footer-center">Información legal y de privacidad</a>
         <span class="footer-right">Español (AR)</span>
     </div>
 </footer>
