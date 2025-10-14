@@ -18,7 +18,7 @@
 </header>
 
 <main class="login-container">
-    <form class="login-box" th:action="@{/login}" method="post">
+    <form class="login-box" th:action="@{/templates/login}" method="post">
         <h2>Iniciar Sesión</h2>
 
         <div th:if="${param.error}" class="login-error-message">

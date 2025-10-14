@@ -11,7 +11,7 @@ public class RegistroController {
     @GetMapping("/registro")
     public String mostrarFormularioDeRegistro(Model model) {
          model.addAttribute("usuarioDTO", new UsuarioDTO());
-        return "registro";
+        return "login/registro";
     }
 
     // Aquí también iría el método @PostMapping("/registro") para procesar los datos
