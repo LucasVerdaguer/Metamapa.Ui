@@ -39,7 +39,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url("../resources/static/img/mapa-fondo.png") no-repeat center center fixed;
+    background: url("../img/mapa-fondo.png") no-repeat center center fixed;
     background-size: cover;
     opacity: 0.6;
     z-index: -1;
