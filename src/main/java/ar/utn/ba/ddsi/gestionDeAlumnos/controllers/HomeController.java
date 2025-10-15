@@ -12,6 +12,11 @@ public class HomeController {
         return "redirect:/alumnos";
     }
 
+    @GetMapping("/inicio")
+    public String inicio() {
+        return "inicio";
+    }
+
     @GetMapping("/404")
     public String notFound(Model model) {
         model.addAttribute("titulo", "No encontrado");
