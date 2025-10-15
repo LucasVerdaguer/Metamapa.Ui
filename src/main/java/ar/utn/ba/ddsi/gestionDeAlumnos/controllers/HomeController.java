@@ -1,8 +1,12 @@
 package ar.utn.ba.ddsi.gestionDeAlumnos.controllers;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.Collection;
 
 @Controller
 public class HomeController {
@@ -13,8 +17,25 @@ public class HomeController {
     }
 
     @GetMapping("/inicio")
-    public String inicio() {
-        return "inicio";
+    public String paginaDeInicioSegunRol(Authentication authentication) {
+
+        // 1. Obtenemos la lista de roles/permisos del usuario que se logueó.
+        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
+        // 2. Buscamos si en esa lista está el rol de ADMIN.
+        boolean esAdmin = authorities.stream()
+                .anyMatch(rol -> rol.getAuthority().equals("ROLE_ADMIN"));
+
+        // 3. Tomamos la decisión.
+        if (esAdmin) {
+            // Si es Admin, le devolvemos la vista del panel de admin.
+            // Thymeleaf buscará el archivo /templates/admin/panel.html
+            return "admin/inicioAdmin";
+        } else {
+            // Para cualquier otro rol, devolvemos la vista de inicio normal.
+            // Thymeleaf buscará el archivo /templates/docente/inicio.html
+            return "inicio";
+        }
     }
 
     @GetMapping("/404")

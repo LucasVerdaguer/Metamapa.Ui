@@ -215,3 +215,33 @@ select:invalid ~ .invalid-feedback {
     color: #fff !important;
     box-shadow: none !important;
 }
+
+.logout-btn {
+    /* 1. Le quitamos la apariencia de botón normal */
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit; /* Usa la misma fuente que el resto del texto */
+
+    /* 2. Le aplicamos los mismos estilos que tenían los enlaces 'nav a' */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* 3. Le aplicamos el mismo efecto hover */
+.logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* 4. Mantenemos el efecto en el ícono */
+.logout-btn:hover i {
+    transform: rotate(-20deg);
+}
