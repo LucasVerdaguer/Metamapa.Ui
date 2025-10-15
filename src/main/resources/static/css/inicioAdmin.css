@@ -1,0 +1,217 @@
+:root {
+    --primary: #688549;
+    --secondary: #a95038;
+    --background: #EBE5DD;
+    --text: #333333;
+}
+
+/* BODY */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    background: #688549;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* NAV LINKS MODERNOS */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+nav a.logout-btn i {
+    transition: transform 0.3s ease;
+}
+
+nav a.logout-btn:hover i {
+    transform: rotate(-20deg);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    nav a { margin-left: 0.5rem; font-size: 0.9rem; }
+}
+
+/* CARDS ADMIN */
+.admin-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem 0.5rem;
+    height: 180px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s, background 0.3s;
+    cursor: pointer;
+
+    /* Sombra inicial más suave */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.admin-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background: linear-gradient(145deg, #688549, #84a36f);
+    color: white;
+}
+
+.admin-card:hover .card-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.admin-card .card-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.admin-card .card-subtitle {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Iconos en las cards */
+.card-icon {
+    font-size: 35px;
+    color: var(--primary);
+    transition: transform 0.4s ease, color 0.4s ease;
+    margin: 0px 10px 0 0px;
+}
+
+/* Hover: rotar icono y cambiar color */
+.admin-card:hover .card-icon {
+    transform: rotate(15deg);
+    color: #fff;
+}
+
+
+
+/* BADGE */
+.badge-notification {
+    background-color: var(--secondary);
+    color: white;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: 25px;
+    padding: 3px;
+}
+
+/* Modal centrado y elegante */
+.modal-content {
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+/* Botones personalizados */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #54713b; /* versión más oscura para hover */
+    border-color: #54713b;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #87352b;
+    border-color: #87352b;
+}
+
+/* Mensajes de validación */
+.invalid-feedback {
+    display: none;
+    font-size: 0.85rem;
+    color: red;
+    margin-top: 0.25rem;
+}
+
+/* Mostrar mensaje si es inválido */
+select:invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* Badge de confirmación inferior */
+.badge-confirm {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    z-index: 1055;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.badge-confirm.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Progreso CSV */
+.progress {
+    height: 25px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background-color: var(--primary);
+    font-weight: bold;
+}
+
+/* Evitar que los botones primary queden celestes al estar disabled o active */
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #68854967 !important; /* verde Bootstrap */
+    border-color: #68854967 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
